@@ -1,6 +1,9 @@
 Introduction to Dapper and Repository Pattern Framework in MVC
 =
 
+## This is forked from 
+* [Olek-HZQ Github](https://github.com/Olek-HZQ/DapperRepository).   I a trying to learn repository patterns and Dapper.  
+
 ## 1.	Target Framework
 Branches:
 
