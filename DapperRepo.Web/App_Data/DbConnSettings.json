@@ -1,0 +1,5 @@
+{
+  "MssqlMasterKey": "Data Source=atv-sqldev1901.bucees.local;Initial Catalog=BASE_DB;Integrated Security=True;",
+  "MysqlMasterKey": "your mysql connection string",
+  "LocalMysqlMasterKey": "you local mysql connection string"
+}
