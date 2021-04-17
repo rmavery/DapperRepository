@@ -24,7 +24,7 @@ namespace DapperRepo.Web.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Blank()
         {
             return View();
         }
@@ -91,7 +91,7 @@ namespace DapperRepo.Web.Controllers
                 numList.Add(qq);
             }
 
-            //批量插入数据，用于测试
+            //Insert data in batches for testing
             List<Customer> customers = new List<Customer>();
 
             DateTime now = DateTime.Now;
