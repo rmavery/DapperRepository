@@ -105,5 +105,20 @@ The database connection string is defined in the ~App_Data/DbConnSettings.json f
       }
 ```
 
-
 All contents of this package are licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+# Load Sequence 
+
+[Startup Sequence of a .NET Core App](https://mihai-albert.com/2020/03/08/startup-sequence-of-a-dotnet-core-app/)
+
+* DapperRepo.Web => DapperRepo.Web.csproj 
+  * This brings in the 'data', 'core', and 'services' projects. 
+  * Program.cs 
+    * Initialize some services 
+    * Call Startup 
+  * Startup.cs 
+    * Set base path
+    * Import app settings 
+    * Add environment variables 
+    * Build the app
+

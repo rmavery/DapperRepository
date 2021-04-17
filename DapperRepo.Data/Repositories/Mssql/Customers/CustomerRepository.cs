@@ -74,27 +74,27 @@ namespace DapperRepo.Data.Repositories.Mssql.Customers
 
             #region Paged Customers
 
-            int totalPage = totalCount <= pageSize ? 1 : totalCount > pageSize && totalCount < (pageSize * 2) ? 2 : totalCount / pageSize; // 总页数
+            int totalPage = totalCount <= pageSize ? 1 : totalCount > pageSize && totalCount < (pageSize * 2) ? 2 : totalCount / pageSize; // total pages
 
-            int midPage = totalPage / 2 + 1; //中间页数，大于该页数则采用倒排优化
+            int midPage = totalPage / 2 + 1; //The number of middle pages, if more than this number of pages, inverted optimization is used
 
-            bool isLastPage = pageIndex == totalPage; // 是否最后一页，是最后一页则需要进行取模算出最后一页的记录数（可能小于PageSize）
+            bool isLastPage = pageIndex == totalPage; // Whether the last page is the last page, it needs to be modulo to calculate the number of records on the last page（May be less than pageSize）
 
-            int descBound = (totalCount - pageIndex * pageSize); // 重新计算limit偏移量
+            int descBound = (totalCount - pageIndex * pageSize); // Recalculate the limit offset
 
-            int lastPageSize = 0; // 计算最后一页的记录数
+            int lastPageSize = 0; // Count the number of records on the last page
 
             if (isLastPage)
             {
-                lastPageSize = totalCount % pageSize; // 取模得到最后一页的记录数
-                descBound -= lastPageSize; // 重新计算最后一页的偏移量
+                lastPageSize = totalCount % pageSize; // Take the modulo to get the number of records on the last page
+                descBound -= lastPageSize; // Recalculate the offset of the last page
             }
             else
             {
-                descBound -= pageSize; // 正常重新计算除最后一页的偏移量
+                descBound -= pageSize; // Normally recalculate the offset except the last page
             }
 
-            bool useDescOrder = pageIndex <= midPage; // 判断是否采取倒排优化
+            bool useDescOrder = pageIndex <= midPage; // Determine whether to adopt inverted optimization
 
             Query customerQuery = new Query(TableName).Select("Id", "Username", "Email", "Active", "CreationTime").WhereFalse("Deleted");
 

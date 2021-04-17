@@ -6,11 +6,11 @@
     {
         #region MSSQL
 
-        public const string Mssql = "Mssql"; // 标识当前使用数据库为mssql
+        public const string Mssql = "Mssql"; // Identifies the currently used database as >> mssql
 
         public const string MssqlMasterKey = "MssqlMasterKey";
 
-        // 可根据具体项目定义多个
+        // More than one can be defined according to specific projects
         // public const string MssqlSecondConnKey = "MssqlSecondConnKey";
 
         #endregion

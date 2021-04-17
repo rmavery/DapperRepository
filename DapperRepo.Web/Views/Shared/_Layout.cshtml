@@ -22,7 +22,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DapperRepo</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Site Title</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -30,13 +30,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Index">Bootstrap UI</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="List">Layui</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="https://github.com/Olek-HZQ/DapperRepository" target="_blank">GitHub Address</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Index">Example</a>
                         </li>
                     </ul>
                 </div>
@@ -45,12 +39,12 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
-            <h1 style="text-align: center; color: #ffffff; background-color: #c0c0c0;">Demo based on Dapper.Net repository pattern</h1>
+            <h1 style="text-align: center; color: #ffffff; background-color: #c0c0c0;">Top of the Page Banner</h1>
             <br />
             @RenderBody()
-            @*<footer>
-                <h3 style="text-align: center;">Author: olek-hzq Email: 875755898@qq.com</h3>
-            </footer>*@
+            <footer>
+                <h3 style="text-align: center;">Page Footer</h3>
+            </footer>
         </main>
     </div>
     @RenderSection("Scripts", required: false)
