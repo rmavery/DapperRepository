@@ -34,9 +34,6 @@ DapperRepository.Web: client operation
      
  ## 3.	Adapt to the design idea of multi-instance database multi-instance
 
-
-![](docs/images/class.jpg)
-
 Generic interface `IRepository<T>`: the most basic CURD
     
 Instance interface `ICustomerRepository`: inherits ICustomerRepository and extensions, generic interface (for different database types)
