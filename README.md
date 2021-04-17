@@ -34,9 +34,6 @@ DapperRepository.Web: client operation
      
  ## 3.	Adapt to the design idea of multi-instance database multi-instance
 
-
-![](docs/images/class.jpg)
-
 Generic interface `IRepository<T>`: the most basic CURD
     
 Instance interface `ICustomerRepository`: inherits ICustomerRepository and extensions, generic interface (for different database types)
@@ -79,10 +76,6 @@ This makes it possible to switch database instances (specifically based on busin
 ### Switch database type
 
 Just modify it to switch the database type of the current project.
-
-.Net Framework 4.5
-
-![](docs/images/5.jpg) 
 
 Core 2.1 and Core 3.1:
 
