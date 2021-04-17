@@ -77,10 +77,6 @@ This makes it possible to switch database instances (specifically based on busin
 
 Just modify it to switch the database type of the current project.
 
-.Net Framework 4.5
-
-![](docs/images/5.jpg) 
-
 Core 2.1 and Core 3.1:
 
 ![](docs/images/6.jpg) 
