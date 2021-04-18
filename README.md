@@ -100,7 +100,7 @@ The database connection string is defined in the ~App_Data/DbConnSettings.json f
 
 All contents of this package are licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-# Load Sequence 
+## Load Sequence 
 
 [Startup Sequence of a .NET Core App](https://mihai-albert.com/2020/03/08/startup-sequence-of-a-dotnet-core-app/)
 
@@ -115,3 +115,29 @@ All contents of this package are licensed under the [MIT license](https://openso
     * Add environment variables 
     * Build the app
 
+
+## Build in this order. 
+1. Core: Classes 
+2. Data: Class Repository Interfaces 
+3. Data: Class Repository
+4. Services: Class Service Interfaces
+5. Services: Class Service
+6. Web: Models
+7. Web: Controllers 
+8. Web: Views
+
+```
+Adding a New Table (Name: Class) 
+
+Core:  
+Domain\Classes\ (Inherits BaseEntity)
+    + Class.cs
+    + ClassRole.cs
+    + ClassRoleXRef.cs
+
+Data: 
+Repositories\BaseInterfaces
+    + IClassRepository.cs
+	\Mssql\
+    + ClassRepository.cs
+```
