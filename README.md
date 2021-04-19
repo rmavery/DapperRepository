@@ -140,4 +140,9 @@ Repositories\BaseInterfaces
     + IClassRepository.cs
 	\Mssql\
     + ClassRepository.cs
+
+Services: 
+BaseInterfaces
+  + IClassService.cs 
+  
 ```

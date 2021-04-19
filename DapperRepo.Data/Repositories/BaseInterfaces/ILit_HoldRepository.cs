@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using DapperRepo.Core.Data;
-using DapperRepo.Core.Domain.LitHold;
+using DapperRepo.Core.Domain.Lit_Hold;
 
 namespace DapperRepo.Data.Repositories.BaseInterfaces
 {
-    public interface ILitHoldRepository : IRepository<Lit_Hold>
+    public interface ILit_HoldRepository : IRepository<Lit_Hold>
     {
         Task<Lit_Hold> GetLit_HoldByIdAsync(int id);
 

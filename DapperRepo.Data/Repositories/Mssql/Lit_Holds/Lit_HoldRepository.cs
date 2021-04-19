@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 using DapperRepo.Core.Data;
-using DapperRepo.Core.Domain.LitHold;
+using DapperRepo.Core.Domain.Lit_Hold;
 using DapperRepo.Data.Repositories.BaseInterfaces;
 using SqlKata;
 
 namespace DapperRepo.Data.Repositories.Mssql.Lit_Holds
 {
-    public class Lit_HoldRepository : MssqlRepositoryBase<Lit_Hold>, ILitHoldRepository
+    public class Lit_HoldRepository : MssqlRepositoryBase<Lit_Hold>, ILit_HoldRepository
     {
         public virtual async Task<Lit_Hold> GetLit_HoldByIdAsync(int id)
         {
