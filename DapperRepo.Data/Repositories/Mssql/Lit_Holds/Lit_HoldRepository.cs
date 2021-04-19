@@ -9,9 +9,9 @@ using DapperRepo.Core.Domain.LitHold;
 using DapperRepo.Data.Repositories.BaseInterfaces;
 using SqlKata;
 
-namespace DapperRepo.Data.Repositories.Mysql.Lit_Holds
+namespace DapperRepo.Data.Repositories.Mssql.Lit_Holds
 {
-    public class Lit_HoldRepository : MysqlRepositoryBase<Lit_Hold>, ILitHoldRepository
+    public class Lit_HoldRepository : MssqlRepositoryBase<Lit_Hold>, ILitHoldRepository
     {
         public virtual async Task<Lit_Hold> GetLit_HoldByIdAsync(int id)
         {
@@ -20,7 +20,7 @@ namespace DapperRepo.Data.Repositories.Mysql.Lit_Holds
             return lit_hold;
         }
 
-        public virtual async Task<Lit_Hold> GetLit_HoldByAsync(string work_order, string case_name)
+     public virtual async Task<Lit_Hold> GetLit_HoldByAsync(string work_order, string case_name)
         {
             //returns ONE entry that matches either the work_order or case_name. I think this can be done better.  I don't like this.  
             var query = new Query(TableName).Select("work_order", "matter_no", "case_name", "begin_date", "end_date", "notes"); //.WhereFalse("Deleted");
@@ -40,15 +40,15 @@ namespace DapperRepo.Data.Repositories.Mysql.Lit_Holds
             return await GetFirstOrDefaultAsync(sqlResult.Sql, sqlResult.NamedBindings);
         }
 
+
         public virtual async Task<IEnumerable<Lit_Hold>> GetAllLit_HoldAsync()
         {
-            var query = new Query(TableName).Select("work_order", "matter_no", "case_name", "begin_date", "end_date", "notes"); //.WhereFalse("Deleted");
+            var query = new Query(TableName).Select("work_order", "matter_no",  "case_name", "begin_date", "emd_date", "notes"); //.WhereFalse("Deleted");
 
             var sqlResult = GetSqlResult(query);
 
             return await GetListAsync(sqlResult.Sql, sqlResult.NamedBindings);
         }
-
         public virtual async Task<Tuple<int, IEnumerable<Lit_Hold>>> GetPagedLit_Holds(string work_order, string case_name, int pageIndex, int pageSize)
         {
             #region TotalCount
