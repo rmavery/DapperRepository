@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using DapperRepo.Core.Domain.LitHold;
+using DapperRepo.Core.Domain.Lit_Hold;
 
 namespace DapperRepo.Services.BaseInterfaces
 {
